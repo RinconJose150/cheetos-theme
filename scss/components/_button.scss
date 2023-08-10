@@ -1,0 +1,47 @@
+@use "../abstracts" as abs;
+@use "../abstracts/variables" as v;
+@use "../abstracts/functions" as f;
+@use "../abstracts/mixins" as m;
+
+.btnChee {
+    padding: 1.2rem 4.8rem;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    color: f.color(grayscale, white);
+    font-family: v.$monstro;
+    font-size: f.sizeFonts(commonFonts, large);
+    position: relative;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    text-shadow: 0px 2.5px 5px rgba(135, 50, 2, 0.60);
+    letter-spacing: 0.03em;
+    @include m.mq(tab,min) {
+        opacity: 0.8;
+    }
+    &.black_orange {
+        background-image: url('../img/icons/icon_btn_black_orange.png');
+    }
+    &.black {
+        background-image: url('../img/icons/icon_btn_black.png');
+    }
+    &.orange {
+        background-image: url('../img/icons/icon_btn_orange.png');
+    }
+    &.big {
+        display: block;
+        max-width: 30rem;
+        text-align: center;
+        font-size: f.sizeFonts(commonFonts, ultra_large);
+        @include m.mq(tab,min) {
+            font-size: f.sizeFonts(commonFonts, ultra_huge);
+        }
+    }
+    &:hover {
+        @include m.mq(tab,min) {
+            cursor: pointer;
+            opacity: 1;
+        }
+    }
+}

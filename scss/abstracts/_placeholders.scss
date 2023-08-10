@@ -1,0 +1,37 @@
+@use './variables' as var;
+
+%container {
+    padding: var.$generalPaddingMob;
+
+    @media (min-width: 768px) {
+        padding: var.$generalPaddingDesk;
+    }
+}
+
+%container-max-limit {
+    margin: 0 auto;
+    max-width: 1920px;
+    width: 100%;
+}
+
+%container-limit {
+    margin: 0 auto;
+    max-width: 1400px;
+    width: 100%;
+}
+
+%container-min-limit {
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+}
+
+%hidden {
+    display: none;
+}
+
+%custom-select {
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+}

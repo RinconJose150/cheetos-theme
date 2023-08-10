@@ -1,0 +1,65 @@
+@use "../abstracts/variables" as v;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: v.$monstro;
+  &.overflow-hidden {
+    overflow: hidden;
+  }
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+img.auto-height {
+  height: auto;
+}
+
+input {
+  max-width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+main {
+  width: 100%;
+}

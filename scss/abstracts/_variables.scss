@@ -1,0 +1,98 @@
+@use "sass:math";
+
+// ==========================================================================
+// MEDIAQUERIES
+// ==========================================================================
+$mediaqueries: (
+  hover: "(hover: hover)",
+  ie: "screen and (-ms-high-contrast: active), (-ms-high-contrast: none)",
+  safari: "screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)",
+  safari2: "not all and (min-resolution:.001dpcm)",
+  landscape: "(orientation: landscape)",
+  portrait: "(orientation: portrait)",
+  mobS3: 360,
+  mobS2: 480,
+  mobS: 640,
+  mob: 767,
+  tabS: 820,
+  tab: 991,
+  lapS3: 1024,
+  lapS2: 1199,
+  lapS: 1280,
+  lap: 1367,
+  deskS: 1440,
+  desk: 1560,
+  deskB: 1680,
+);
+
+// ==========================================================================
+// Paths and Brand
+// ==========================================================================
+$fontPath: "../fonts";
+$imagePath: "../img";
+$prefix: "chess";
+
+// ==========================================================================
+// General Padding Container
+// ==========================================================================
+$generalPaddingMob: 25px;
+$generalPaddingDesk: 45px;
+
+// ==========================================================================
+// FontStack
+// ==========================================================================
+$monstro: "Monstro", sans-serif;
+$lexend: "Lexend", sans-serif;
+
+// ==========================================================================
+// COLORS : Eje.: background: color( primary, light );
+// ==========================================================================
+$colors: (
+  primary: (),
+  bg: (),
+  complementary: (),
+  grayscale: (
+    white: #ffffff,
+    gray-1: #f2f2f2,
+    gray-2: #eeeeee,
+    gray-3: #cccccc,
+    gray-4: #999999,
+    gray-5: #666666,
+    gray-6: #333333,
+    gray-7: #4a4a4a,
+    gray-8: #f1f0f2,
+    base: #1b1b1b,
+    black: #000000,
+  ),
+);
+
+// ==========================================================================
+// GENERAL FONTS : Eje.: sizeFonts(tiny, small)
+// ==========================================================================
+$font-size         : 1rem;
+$referFont         : 10;
+$sizes: (
+   commonFonts: (
+        btn:  math.div(18, $referFont) + rem,     // 18px
+        linkMenu:  math.div(36, $referFont) + rem,     // 36px
+
+        mini:  math.div(12, $referFont) + rem,     // 14px
+        tiny:  math.div(14, $referFont) + rem,     // 14px
+        small:  math.div(16, $referFont) + rem,     // 16px
+        medium:  math.div(18, $referFont) + rem,     // 18px
+        big:  math.div(20, $referFont) + rem,     // 20px
+        large:  math.div(24, $referFont) + rem,     // 24px
+        xl:  math.div(26, $referFont) + rem,     // 26px
+        huge:  math.div(30, $referFont) + rem,     // 36px
+
+
+        ultra_mini:  math.div(12, $referFont) + rem,     // 1px
+        ultra_small:  math.div(28, $referFont) + rem,     // 8px
+        ultra_medium:  math.div(32, $referFont) + rem,     // 8px
+        ultra_big:  math.div(43, $referFont) + rem,     // 9px
+        ultra_large:  math.div(42, $referFont) + rem,     // 9px
+        ultra_huge:  math.div(50, $referFont) + rem,     // 9px
+        xxl:  math.div(60, $referFont) + rem,     // 9px
+        xxxl:  math.div(80, $referFont) + rem,     // 9px
+   ),
+);

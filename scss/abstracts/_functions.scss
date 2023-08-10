@@ -1,0 +1,36 @@
+@use "sass:math";
+@use "variables" as v;
+@use "mixins" as m;
+
+// ==========================================================================
+// Función que define los colores del sistema basado en el mapa de colores establecido en las variables
+// ==========================================================================
+@function color($color, $tone) {
+  @if map-has-key(v.$colors, $color) {
+    $color: map-get(v.$colors, $color);
+    @if map-has-key($color, $tone) {
+      $tone: map-get($color, $tone);
+      @return $tone;
+    }
+  }
+}
+
+// ==========================================================================
+// Funcion que define los tamaños del sistema basado en el mapa de fuentes establecido en las variables
+// ==========================================================================
+@function sizeFonts($size, $typeSize){
+   @if map-has-key(v.$sizes, $size){
+       $size: map-get(v.$sizes, $size);
+       @if map-has-key($size, $typeSize){
+           $typeSize: map-get($size, $typeSize);
+           @return $typeSize;
+       }
+   }
+}
+
+// ==========================================================================
+// Función que define los tamaños del sistema basado fuentes establecido en las variables
+// ==========================================================================
+@function toRem($size) {
+  @return math.div($size, v.$referFont) + rem;
+}

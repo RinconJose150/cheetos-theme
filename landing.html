@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing</title>
+    <link rel="stylesheet" href="./lib/normalize/normalize.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <header class="chess_header">
+        <div class="chess_header__body">
+            <div class="imgLogo">
+                <picture>
+                    <source srcset="./img/icons/icon-logo.webp" type="image/webp">
+                    <source srcset="./img/icons/icon-logo.png" type="image/png">
+                    <img src="./img/icons/icon-logo.png" alt="logo" title="logo" loading="lazy">
+                </picture>
+            </div>
+            <div class="chessMenu">
+                <div class="chessMenu__body">
+                    <p class="paragraph">Login</p>
+                    <a href="#" class="containerLogin" id="containerLogin">
+                        <div class="imgLogin">
+                            <img src="./img/icons/icon-log.svg" alt="icon login" title="icon login">
+                        </div>
+                        <div class="imgMenu">
+                            <img class="mobile" src="./img/icons/icon-menu-mobile.svg" alt="icon menu" title="icon menu">
+                            <img class="desktop" src="./img/icons/icon-menu.svg" alt="icon menu" title="icon menu">
+                        </div>
+                    </a>
+                </div>
+                <a href="#" class="conatinerMenuClose hidden" id="btnCloseMenu">
+                    <img class="" src="./img/icons/icon-menu-close.png" alt="icon menu" title="icon menu">
+                </a>
+            </div>
+            <div class="menuFixed" id="menuFixed">
+                <div class="bgImage">
+                    <picture>
+                        <source media="(min-width: 640px)" srcset="./img/upload/bg_menu.webp" type="image/webp">
+                        <source media="(min-width: 640px)" srcset="./img/upload/bg_menu.jpg" type="image/jpeg">
+                        <source srcset="./img/upload/bg_menu_mobile.webp" type="image/webp">
+                        <img src="./img/upload/bg_menu_mobile.jpg" alt="bg banner" title="bg banner" loading="lazy">
+                    </picture>
+                </div>
+                <div class="menuFixed__body">
+                    <div class="containerMenu">
+                        <div class="canvasChee">
+                            <img src="./img/upload/cheetos_tiger.png" alt="canvas tiger" title="canvas tiger">
+                        </div>
+                        <nav class="navMenu">
+                            <a href="#" class="navMenu_link">Home</a>
+                            <a href="#" class="navMenu_link">Jugar</a>
+                            <a href="#" class="navMenu_link">Ranking</a>
+                            <a href="#" class="navMenu_link">Premios</a>
+                            <a href="#" class="navMenu_link btnChee black">Iniciar Sesión</a>
+                        </nav>
+                    </div>
+                    <!-- <div class="menuLogin">
+                        <form class="menuLogin__body">
+                            <div class="bgImage">
+                                <picture>
+                                    <source srcset="./img/background/bg_text_form.webp" type="image/webp">
+                                    <source srcset="./img/background/bg_text_form.png" type="image/png">
+                                    <img src="./img/background/bg_text_form.png" alt="bg banner" title="bg banner" loading="lazy">
+                                </picture>
+                            </div>
+                            <fieldset>
+                                <legend>Ingresa tu</legend>
+                                <input type="email" name="" id="" placeholder="Correo electrónico">
+                                <input type="submit" value="Continuar" class="btnChee orange">
+                            </fieldset>
+                        </form>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="chess_landing">
+            <div class="bgImage">
+                <picture>
+                    <source media="(min-width: 991px)" srcset="./img/upload/bg_orange.webp" type="image/webp">
+                    <source media="(min-width: 991px)" srcset="./img/upload/bg_orange.jpg" type="image/jpeg">
+                    <source srcset="./img/upload/bg_orange_mobile.webp" type="image/webp">
+                    <img src="./img/upload/bg_orange_mobile.jpg" alt="bg banner" title="bg banner" loading="lazy">
+                </picture>
+            </div>
+            <div class="chess_landing__body">
+                <div class="contentBody">
+                    <div class="awards">
+                        <div class="contentAwards">
+                            <div class="bgImage">
+                                <picture>
+                                    <source media="(min-width: 991px)" srcset="./img/background/bg_wine.webp" type="image/webp">
+                                    <source media="(min-width: 991px)" srcset="./img/background/bg_wine.png" type="image/png">
+                                    <source srcset="./img/background/bg_wine_mobile.webp" type="image/webp">
+                                    <img src="./img/background/bg_wine_mobile.png" alt="bg banner" title="bg banner" loading="lazy">
+                                </picture>
+                            </div>
+                            <div class="textContent">
+                                <h1 class="titleSection">
+                                    <span>Juega y</span>
+                                    <span>Participa</span>
+                                </h1>
+                                <p class="mini">por un</p>
+                                <p class="big">
+                                    <span>iPhone</span>
+                                    <span>14</span>
+                                </p>
+                                <p class="complementary">
+                                    <span class="bold">Ipads, airpods max y</span>
+                                    <span class="midium">Muchos premios más</span>
+                                </p>
+                                <div class="imgPhone">
+                                    <img src="./img/background/phone.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="canvasChee">
+                        <img src="./img/upload/cheetos_tiger.png" alt="canvas tiger" title="canvas tiger">
+                    </div>
+                    <div class="containerBtns">
+                        <a href="#" class="btnChee black_orange big">Jugar</a>
+                        <a href="#" class="btnChee orange">Ranking</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./js/150_chee/main.js"></script>
+</body>
+</html>
