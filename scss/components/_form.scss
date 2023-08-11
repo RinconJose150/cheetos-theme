@@ -1,0 +1,125 @@
+@use "../abstracts" as *;
+
+.bgImage {
+  height: 100%;
+}
+
+.#{$var-prefix}-email-view {
+  @extend %fill-in;
+  @include mix-position($top: 0, $left: 0);
+}
+
+.#{$var-prefix}-form {
+  height: 100%;
+
+  &__body {
+    color: #fff;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+
+    display: grid;
+    align-items: center;
+    grid-template-rows: repeat(2, 1fr);
+
+    @include mix-mq(mob, min) {
+      max-width: 440px;
+    }
+
+    @include mix-mq(tab, min) {
+      max-width: 600px;
+    }
+
+    @include mix-mq(lap, min) {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__header {
+    @include mix-mq(766) {
+      margin: auto;
+      max-width: 300px;
+    }
+  }
+
+  &__title {
+    font-size: fun-toRem(48);
+    line-height: 1;
+    text-shadow: 0px 2.5px 5px rgba(135, 50, 2, 0.6);
+
+    @include mix-mq(tab, min) {
+      font-size: fun-toRem(72);
+    }
+  }
+
+  &__desc {
+    font-family: $var-lexend;
+    font-size: fun-sizeFonts(commonFonts, huge);
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 0px 3.75px 7.5px rgba(135, 50, 2, 0.6);
+
+    @include mix-mq(tab, min) {
+      font-size: fun-sizeFonts(commonFonts, ultra_large);
+    }
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: 400px;
+
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    align-content: space-between;
+
+    @include mix-mq(mob, min) {
+      align-items: flex-end;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    input {
+      display: block;
+      text-align: center;
+
+      &[type="text"],
+      &[type="email"],
+      &[type="password"] {
+        background: url(#{$var-imagePath}/background/bg_input.png) center
+          center/100% 100% no-repeat transparent;
+        color: #fff;
+        font-family: "Lexend";
+        padding: 10px 30px;
+
+        width: 100%;
+
+        &::placeholder {
+          color: #ffffffa9;
+        }
+
+        @include mix-mq(tab, min) {
+          font-size: 22px;
+          padding: 10px 30px;
+        }
+      }
+
+      &[type="submit"] {
+        cursor: pointer;
+        filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.4));
+
+        background: url(#{$var-imagePath}/icons/icon_btn_orange.png) center
+          center/100% 100% no-repeat;
+        color: #fff;
+        font-family: "Monstro";
+        font-size: 24px;
+        margin: 0 auto;
+        min-width: 200px;
+        padding: 10px 30px;
+      }
+    }
+  }
+}

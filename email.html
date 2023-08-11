@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing</title>
+    <title>Form Email</title>
     <link rel="stylesheet" href="./lib/normalize/normalize.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
     <header class="chess_header">
         <div class="chess_header__body">
@@ -19,5 +21,32 @@
             </div>
         </div>
     </header>
+    <main class="chess-email-view">
+        <figure class="bgImage">
+            <picture>
+                <source media="(min-width: 991px)" srcset="./img/upload/bg_orange.webp" type="image/webp">
+                <source media="(min-width: 991px)" srcset="./img/upload/bg_orange.jpg" type="image/jpeg">
+                <source srcset="./img/upload/bg_orange_mobile.webp" type="image/webp">
+                <img src="./img/upload/bg_orange_mobile.jpg" alt="bg banner" title="bg banner" loading="lazy">
+            </picture>
+        </figure>
+        <section class="chess-form">
+            <article class="chess-form__body chess-container-x">
+                <header class="chess-form__header">
+                    <h1 class="chess-form__title">Ingresa</h1>
+                    <p class="chess-form__desc">tu correo electrónico</p>
+                </header>
+                <form class="chess-form__wrapper">
+                    <fieldset>
+                        <input type="email" name="user-email" id="user-email" placeholder="Correo electrónico">
+                    </fieldset>
+                    <div class="form-actions">
+                        <input type="submit" value="Continuar">
+                    </div>
+                </form>
+            </article>
+        </section>
+    </main>
 </body>
+
 </html>
