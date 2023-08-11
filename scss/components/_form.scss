@@ -161,6 +161,20 @@
       background: url(#{$var-imagePath}/icons/icon_btn_black.png);
     }
   }
+
+  &--code &__header {
+    max-width: 450px;
+  }
+
+  &--code {
+    .form-fields {
+      align-self: flex-start;
+    }
+    
+    .#{$var-prefix}-form-text {
+      margin-bottom: 45px;
+    }
+  }
 }
 
 .#{$var-prefix}-form-text {
