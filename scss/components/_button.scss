@@ -9,7 +9,7 @@
     text-transform: uppercase;
     color: f.color(grayscale, white);
     font-family: v.$monstro;
-    font-size: f.sizeFonts(commonFonts, large);
+    font-size: f.toRem(24);
     position: relative;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -35,9 +35,9 @@
         display: block;
         max-width: 30rem;
         text-align: center;
-        font-size: f.sizeFonts(commonFonts, ultra_large);
+        font-size: f.toRem(42);
         @include m.mq(tab,min) {
-            font-size: f.sizeFonts(commonFonts, ultra_huge);
+            font-size: f.toRem(50);
         }
     }
     &:hover {

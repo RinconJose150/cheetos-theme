@@ -8,6 +8,9 @@ function listenerEvents() {
 
     // Swiper
     runSwiper()
+
+    // Change URL
+    changeURL()
 }
 
 function functionMenu() {
@@ -35,6 +38,7 @@ function btnCloseMenu(btn) {
 
 function runSwiper(params) {
     const chessSwiper = new Swiper(".chessSwiper", {
+        direction: "vertical",
         pagination: {
           el: ".swiper-pagination",
           type: "fraction",
@@ -44,4 +48,26 @@ function runSwiper(params) {
           prevEl: ".swiper-button-prev",
         },
       });
+}
+
+function changeURL() {
+    const btn = document.querySelector('.chess_instructions .btnChee')
+    btn.addEventListener('click', e => {
+        e.preventDefault()
+        const url = new URL(location);
+        // url.searchParams.set("foo", "bar");
+        url.pathname = '/hola'
+        history.pushState({}, "", url);
+        probando()
+    })
+}
+
+function probando() {
+    // detected if de page is reloading
+    window.addEventListener('beforeunload', function (e) {
+        const url = new URL(location);
+        console.log(url.pathname);
+        // redirect another page
+        window.location.href = '/instruction';
+    });
 }

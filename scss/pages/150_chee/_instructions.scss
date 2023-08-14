@@ -5,38 +5,93 @@
 .#{v.$prefix} {
     &_instructions {
         position: relative;
-        padding-top: 7rem;
+        // padding-top: 7rem;
         height: 100%;
         min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
         overflow: hidden;
-        @include m.mq(mobS3,min) {
-            padding-top: 14rem;
+        .containerBtns {
+            .btnChee {
+                @include m.position(auto, 4.5rem, 50%);
+                transform: translateX(-50%);
+                @include m.mq(tab,min) {
+                    @include m.position(auto, 4.5rem, v.$step-four);
+                    transform: translateX(-20%);
+                }
+            }
+            .removeIntruction {
+                @include m.position(auto, 5rem, 0, auto);
+                transform: translate(10%, -40%) rotate(-90deg);
+                color: f.color(grayscale,white);
+                font-size: f.toRem(16);
+                letter-spacing: .03em;
+                font-family: v.$lexend;
+                font-weight: 700;
+                text-transform: initial;
+                @include m.mq(tab,min) {
+                    @include m.position(auto, 7.2rem, auto, 0);
+                    transform: translate(-30%,50%) rotate(-90deg);
+                }
+            }
         }
-        @include m.mq(tab,min) {
-            padding-top: 0;
+        .textIntructions {
+            @include m.position(auto, 9.8rem, auto, 0);
+            transform: translate(36%, -100%) rotate(-90deg);
+            font-size: f.toRem(42);
+            font-family: v.$monstro;
+            opacity: 0.35;
+            @include m.mq(tab,min) {
+                font-size: f.toRem(72);
+                @include m.position(50%, auto, auto, 0);
+                transform: translate(45%,-50%) rotate(-90deg);
+
+            }
         }
         &__body {
             width: 90%;
             margin: 0 auto;
             text-align: center;
+        }
+        .canvasChee {
+            width: 90%;
+            height: 100%;
+            max-width: 23.1rem;
+            max-height: 44rem;
+            @include m.position(v.$step-three, auto, 50%);
+            transform: translate(-50%,-20%);
             display: flex;
-            flex-direction: column-reverse;
-            justify-content: center;
-            align-items: center;
             @include m.mq(tab,min) {
-                max-height: calc(100vh - 10rem);
-                width: 100%;
-                display: grid;
-                grid-template-columns: 1.5fr 2fr;
-                gap: 0;
+                @include m.position(50%, auto, v.$step-one);
+                transform: translate(-50%,-50%);
+                max-height: 100%;
+                max-width: 37.5rem;
+            }
+            img {
+                max-height: 44rem;
+                @include m.mq(tab,min) {
+                    max-height: 100%;
+                    margin: auto 0;
+                }
             }
         }
     }
     &_carousel {
-        width: 100%;
+        width: 90%;
+        max-width: 67.8rem;
+        @include m.position(v.$step-two, auto, 50%);
+        transform: translate(-50%,-50%);
+        @include m.mq(tab,min) {
+            @include m.position(v.$step-one, auto, v.$step-two);
+            transform: none;
+        }
+        &__body {
+            height: 20rem;
+            @include m.mq(tab,min) {
+                height: 40rem;
+            }
+        }
         .chessSwiper {
             width: 100%;
             height: 100%;
@@ -53,27 +108,145 @@
                 border-radius: 2rem;
                 background: rgba(0, 0, 0, 0.50);
                 mix-blend-mode: multiply;
-                backdrop-filter: blur(25.5px);
+                // backdrop-filter: blur(25.5px);
             }
         }
         .swiper-slide {
-            height: 23.5rem;
-            padding: 2rem;
+            height: 20rem;
+            // overflow: hidden;
+            padding: 3rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .5s linear;
+            &-active {
+                opacity: 1;
+                visibility: visible;
+                transition: all .5s linear;
+            }
             &:nth-child(1) {
                 .contentSwiper {
+                    width: 100%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                 }
-                .text {
-                    display: grid;
-                    color: f.color(grayscale, white);
-                    text-align: center;
+                .imgText {
                     width: 70%;
-                    font-size: f.toRem(38);
                 }
                 .imgContent {
                     width: 30%;
+                    position: relative;
+                    bottom: 6rem;
+                    animation: scaleArrow 3s forwards;
+                    &_hands {
+                        width: 4rem;
+                        position: absolute;
+                        opacity: 0;
+                        animation: scaleHands 5s infinite;
+                        transform: translate(-50%,-50%);
+                        animation-delay: 3s;
+                    }
+                }
+                @keyframes scaleArrow {
+                    from {
+                        transform: scale(0);
+                    }
+                    to {
+                        transform: scale(1);
+                    }
+                }
+                @keyframes scaleHands {
+                    0% {
+                        top: 100%;
+                        left: 40%;
+                        scale: .8;
+                        opacity: .4;
+                    }
+                    100% {
+                        top: 25%;
+                        left: 125%;
+                        scale: 2;
+                        opacity: 1;
+                    }
+                }
+            }
+            &:nth-child(2) {
+                .contentSwiper {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .imgText {
+                    width: 70%;
+                }
+                .imgContent {
+                    width: 30%;
+                    position: relative;
+                    bottom: 4rem;
+                    animation: scaleArrow 3s forwards;
+                    &_bar {
+                        width: 4rem;
+                        position: absolute;
+                        animation: scaleBar 5s infinite;
+                        transform: translate(-50%,-50%);
+                        animation-delay: 3s;
+                        top: 80%;
+                        left: 60%;
+                    }
+                }
+                @keyframes scaleBar {
+                    100% {
+                        top: 20%;
+                        left: 80%;
+                    }
+                }
+
+            }
+            &:nth-child(3) {
+                .contentSwiper {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .imgText {
+                    width: 100%;
+                }
+                .imgContent {
+                    width: 35%;
+                    position: absolute;
+                    bottom: 0;
+                    right: -1rem;
+                    z-index: -1;
+                }
+                @keyframes scaleBar {
+                    100% {
+                        top: 20%;
+                        left: 80%;
+                    }
+                }
+
+            }
+            &:nth-child(4) {
+                .contentSwiper {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .imgText {
+                    width: 70%;
+                    margin-right: auto;
+                }
+                .imgContent {
+                    width: 50%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    right: -1rem;
+                    z-index: -1;
+                    // bottom: 6rem;
                 }
             }
         }
@@ -88,8 +261,11 @@
             bottom: var(--swiper-pagination-bottom,-1rem);
             top: var(--swiper-pagination-top,auto);
             left: 2rem;
+            font-weight: 700;
             @include m.mq(tab,min) {
                 font-size: f.toRem(108);
+                bottom: var(--swiper-pagination-bottom,-57%);
+                line-height: .9;
             }
             &-current {
                 line-height: .8;
@@ -103,6 +279,8 @@
                 font-size: f.toRem(27);
                 @include m.mq(tab,min) {
                     font-size: f.toRem(108);
+                    position: relative;
+                    left: -1.5rem;
                 }
             }
         }
