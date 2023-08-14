@@ -17,8 +17,18 @@
             align-items: center;
             align-items: flex-start;
             padding: 1rem 0;
+            position: relative;
             @include m.mq(tab,min) {
                 padding: 2rem 0;
+            }
+        }
+        .waveImg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 11;
+            @include m.mq(tab,min) {
+                display: none;
             }
         }
         .imgLogo {
@@ -112,11 +122,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: all .5s ease-in-out;
             &.active {
                 opacity: 1;
                 pointer-events: all;
                 visibility: visible;
-                transition: all 1s ease-in-out;
+                transition: all .5s ease-in-out;
             }
             &__body {
                 display: flex;
@@ -133,20 +144,45 @@
                     // padding-bottom: 0;
                 }
                 .containerMenu {
+                    width: 100%;
+                    height: 100vh;
+                    position: relative;
                     @include m.mq(tab,min) {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 3rem;
-                        flex: auto;
+                        // display: flex;
+                        // justify-content: center;
+                        // align-items: center;
+                        // gap: 3rem;
+                        // flex: auto;
                     }
                 }
                 .navMenu {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 3rem;
+                    width: 100%;
+                    &__top {
+                        @include m.set-position(v.$step-three, auto, 50%);
+                        transform: translate(-50%,-100%);
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 3rem;
+                        @include m.mq(tab,min) {
+                            @include m.set-position(50%, auto, v.$step-four);
+                            transform: translate(-50%,-50%);
+                        }
+                    }
+                    &__bottom {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        @include m.set-position(v.$step-four, auto, 50%);
+                        transform: translate(-50%);
+                        a {
+                            display: block;
+                        }
+
+                    }
                     &_link {
                         color: f.color(grayscale,white);
                         font-family: v.$lexend;
@@ -156,14 +192,14 @@
                         @include m.mq(tab,min) {
                             font-size: f.sizeFonts(commonFonts,ultra_huge);
                         }
-                        &::after {
-                            content: '';
-                            display: block;
-                            width: 0;
-                            height: 2px;
-                            background-color: f.color(grayscale,white);
-                            transition: all .3s ease-in-out;
-                        }
+                        // &::after {
+                        //     content: '';
+                        //     display: block;
+                        //     width: 0;
+                        //     height: 2px;
+                        //     background-color: f.color(grayscale,white);
+                        //     transition: all .3s ease-in-out;
+                        // }
                         // &:nth-child(odd) {
                         //     &:hover {
                         //         transform: rotate(-5deg) scale(1.05);

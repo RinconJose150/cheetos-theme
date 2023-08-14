@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
 function listenerEvents() {
     // Function Menu
     functionMenu()
+
+    // Swiper
+    runSwiper()
 }
 
 function functionMenu() {
@@ -28,4 +31,17 @@ function btnCloseMenu(btn) {
         document.querySelector('.chess_header #menuFixed').classList.remove('active')
         btnClose.previousElementSibling.classList.remove('hide')
     })
+}
+
+function runSwiper(params) {
+    const chessSwiper = new Swiper(".chessSwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
 }

@@ -6,6 +6,7 @@
     <title>Landing</title>
     <link rel="stylesheet" href="./lib/normalize/normalize.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 <body>
     <header class="chess_header">
@@ -80,60 +81,59 @@
         </div>
     </header>
     <main>
-        <section class="chess_landing">
+        <section class="chess_instructions">
             <div class="bgImage">
                 <picture>
-                    <source media="(min-width: 991px)" srcset="./img/upload/bg_orange.webp" type="image/webp">
-                    <source media="(min-width: 991px)" srcset="./img/upload/bg_orange.jpg" type="image/jpeg">
-                    <source srcset="./img/upload/bg_orange_mobile.webp" type="image/webp">
-                    <img src="./img/upload/bg_orange_mobile.jpg" alt="bg banner" title="bg banner" loading="lazy">
+                    <source media="(min-width: 991px)" srcset="./img/upload/bg_orange1.webp" type="image/webp">
+                    <source media="(min-width: 991px)" srcset="./img/upload/bg_orange1.jpg" type="image/jpeg">
+                    <source srcset="./img/upload/bg_orange1_mobile.webp" type="image/webp">
+                    <img src="./img/upload/bg_orange1_mobile.jpg" alt="bg banner" title="bg banner" loading="lazy">
                 </picture>
             </div>
-            <div class="chess_landing__body">
-                <div class="contentBody">
-                    <div class="awards">
-                        <div class="contentAwards">
-                            <div class="bgImage">
-                                <picture>
-                                    <source media="(min-width: 991px)" srcset="./img/background/bg_wine.webp" type="image/webp">
-                                    <source media="(min-width: 991px)" srcset="./img/background/bg_wine.png" type="image/png">
-                                    <source srcset="./img/background/bg_wine_mobile.webp" type="image/webp">
-                                    <img src="./img/background/bg_wine_mobile.png" alt="bg banner" title="bg banner" loading="lazy">
-                                </picture>
-                            </div>
-                            <div class="textContent">
-                                <h1 class="titleSection">
-                                    <span>Juega y</span>
-                                    <span>Participa</span>
-                                </h1>
-                                <p class="mini">por un</p>
-                                <p class="big">
-                                    <span>iPhone</span>
-                                    <span>14</span>
-                                </p>
-                                <p class="complementary">
-                                    <span class="bold">Ipads, airpods max y</span>
-                                    <span class="midium">Muchos premios más</span>
-                                </p>
-                                <div class="imgPhone">
-                                    <img src="./img/background/phone.png" alt="">
+            <div class="chess_instructions__body">
+                <div class="canvasChee">
+                    <img src="./img/upload/cheetos_tiger.png" alt="canvas tiger" title="canvas tiger">
+                </div>
+                <div class="chess_carousel">
+                    <div class="chess_carousel__body">
+                        <div class="swiper chessSwiper swiperGeneralStyles">
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="contentSwiper">
+                                        <p class="text">
+                                            <span>Toca y</span>
+                                            <span>arrastra</span>
+                                            <span>para</span>
+                                            <span>definir</span>
+                                            <span>la dirección</span>
+                                        </p>
+                                        <div class="imgContent">
+                                            <img src="./img/icons/icon-arrow-big.svg" alt="arrow big">
+                                            <div class="imgContent_hands">
+                                                <img src="./img/icons/icon-hand.svg" alt="arrow big">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <div class="swiper-slide">Slide 2</div>
+                                <div class="swiper-slide">Slide 3</div>
+                                <div class="swiper-slide">Slide 4</div>
+                                <div class="swiper-slide">Slide 5</div>
+                                <div class="swiper-slide">Slide 6</div>
+                                <div class="swiper-slide">Slide 7</div>
+                                <div class="swiper-slide">Slide 8</div>
+                                <div class="swiper-slide">Slide 9</div>
                             </div>
-                            <a href="#" class="btnChee orange">Ver Premios</a>
+                            <!-- <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div> -->
                         </div>
-                    </div>
-                    <div class="canvasChee">
-                        <img class="mobile" src="./img/upload/cheetos_tiger.png" alt="canvas tiger" title="canvas tiger">
-                        <img class="desktop" src="./img/upload/place-tiger.png" alt="canvas tiger" title="canvas tiger">
-                    </div>
-                    <div class="containerBtns">
-                        <a href="#" class="btnChee black_orange big">Jugar</a>
-                        <a href="#" class="btnChee orange">Ranking</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/150_chee/main.js"></script>
 </body>
 </html>

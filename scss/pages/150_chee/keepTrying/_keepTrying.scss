@@ -1,0 +1,183 @@
+@use "../../../abstracts/variables" as v;
+@use "../../../abstracts/functions" as f;
+@use "../../../abstracts/mixins" as m;
+@use "../../../components/positionUAurea";
+
+.#{v.$prefix} {
+    &_keepTrying {
+        position: relative;
+        // padding-top: 7rem;
+        height: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        @include m.mq(mobS3,min) {
+            // padding-top: 5rem;
+        }
+        &__body {
+            min-height: 100vh;
+            width: 90%;
+            position: relative;
+            @include m.mq(tab,min) {
+                // max-height: calc(100vh - 5rem);
+                // width: 80%;
+                // margin: 0 5% 0 auto;
+                // display: grid;
+                // grid-template-columns: repeat(2, 1fr);
+                // grid-template-rows: repeat(2, 1fr);
+                // gap: 0;
+            }
+            .containerTitle {
+                width: 100%;
+                max-width: 47rem;
+                @include m.set-position(v.$step-two, auto, 50%);
+                transform: translate(-50%,-100%);
+                @include m.mq(tab,min) {
+                    @include m.set-position(v.$step-one, auto, v.$step-four);
+                    transform: translateX(-50%);
+                }
+            }
+            .titleSection {
+                color: f.color(grayscale, white);
+                display: grid;
+                font-family: v.$monstro;
+                line-height: .9;
+                font-size: f.toRem(40);
+                text-shadow: 0px 2.5px 5px rgba(135, 50, 2, 0.60);
+                text-align: center;
+                @include m.mq(mobS3,min) {
+                    font-size: f.toRem(48);
+                }
+                @include m.mq(tab,min) {
+                    // margin: auto 0 0 0;
+                    font-size: f.toRem(60);
+                }
+                @include m.mq(lap,min) {
+                    font-size: f.toRem(72);
+                }
+            }
+            .canvasChee {
+                // width: 100%;
+                height: 100%;
+                max-height: f.toRem(200);
+
+                @include m.set-position(v.$step-two, auto, 50%);
+                transform: translateX(-50%);
+
+                @include m.mq(mobS3,min) {
+                    max-height: f.toRem(230);
+                }
+                @include m.mq(tab,min) {
+                    @include m.set-position(50%, auto, v.$step-two);
+                    transform: translate(-50%,-50%);
+                    // grid-column: 1 / 2;
+                    // grid-row: 1 / 3;
+                }
+                @include m.mq(tab,min) {
+                    max-height: initial;
+                    // max-height: calc(100vh - 5rem);
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    max-height: f.toRem(200);
+                    @include m.mq(mobS3,min) {
+                        max-height: f.toRem(230);
+                    }
+                    @include m.mq(tab,min) {
+                        max-height: 100%;
+                        max-height: calc(100vh - 5rem);
+                    }
+                    &.mobile {
+                        @include m.mq(tab,min) {
+                            display: none;
+                        }
+                    }
+                    &.desktop {
+                        display: none;
+                        // max-height: none;
+                        @include m.mq(tab,min) {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .paragraph {
+                font-family: v.$lexend;
+                font-size: f.toRem(16);
+                background-image: url('../img/icons/icon_bg_black_text.png');
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 100% 100%;
+                color: f.color(grayscale, white);
+                padding: 1.5rem 2.5rem 2rem;
+                line-height: 1;
+                width: 100%;
+                max-width: 47rem;
+                text-align: center;
+                @include m.mq(tab,min) {
+                    padding: 2rem 5.5rem 2rem;
+                    font-size: f.toRem(20);
+                }
+                @include m.mq(lap,min) {
+                    padding: 1.7rem 2.5rem 2rem;
+                    font-size: f.toRem(24);
+                }
+                &.desktop {
+                    display: none;
+                    margin-top: -1.5rem;
+                    @include m.mq(tab,min) {
+                        display: block;
+                    }
+                }
+                &.mobile {
+                    @include m.mq(tab,min) {
+                        display: none;
+                    }
+                }
+            }
+            .textWithBtn {
+                @include m.set-position(auto, 4.5rem, 50%);
+                transform: translateX(-50%);
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                @include m.mq(tab,min) {
+                    margin-top: -1rem;
+                    justify-content: space-between;
+                    @include m.set-position(v.$step-four, auto, v.$step-four);
+                    transform: translate(-50%);
+                }
+                .containerBtns {
+                    margin-top: -.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 2rem;
+                    @include m.mq(tab,min) {
+                        margin-top: 0;
+                    }
+                    .btnChee {
+                        display: inline-block;
+                        @include m.mq(tab,min) {
+                            display: block;
+                            width: 100%;
+                        }
+                        &.hideBtn {
+                            display: none;
+                            @include m.mq(tab,min) {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

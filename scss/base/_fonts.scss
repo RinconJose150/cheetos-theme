@@ -5,16 +5,14 @@
 // ==========================================================================
 @font-face {
     font-family: 'Lexend';
-    src: url('#{var.$fontPath}/lexend/Lexend-ExtraBold.woff') format('woff2'),
-        url('#{var.$fontPath}/lexend/Lexend-ExtraBold.woff2') format('woff');
+    src: url('#{var.$fontPath}/lexend/Lexend-ExtraBold.woff') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Lexend';
-    src: url('#{var.$fontPath}/lexend/Lexend-Medium.woff') format('woff2'),
-        url('#{var.$fontPath}/lexend/Lexend-Medium.woff2') format('woff');
+    src: url('#{var.$fontPath}/lexend/Lexend-Medium.woff') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -25,8 +23,7 @@
 // ==========================================================================
 @font-face {
     font-family: 'Monstro';
-    src: url('#{var.$fontPath}/monstro/Monstro.woff') format('woff2'),
-        url('#{var.$fontPath}/monstro/Monstro.woff2') format('woff');
+    src: url('#{var.$fontPath}/monstro/Monstro.woff') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

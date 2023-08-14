@@ -1,0 +1,101 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+
+// steps vertical
+// %stepVerticalOne {
+//     &-top {
+//         position: absolute;
+//         top: v.$step-one;
+//         transform: translateY(-100%);
+//     }
+//     &-bottom {
+//         position: absolute;
+//         top: v.$step-one;
+//     }
+// }
+// %stepVerticalTwo {
+//     &-top {
+//         position: absolute;
+//         top: v.$step-two;
+//         transform: translateY(-100%);
+//     }
+//     &-bottom {
+//         position: absolute;
+//         top: v.$step-two;
+//     }
+// }
+// %stepVerticalThree {
+//     &-top {
+//         position: absolute;
+//         top: v.$step-three;
+//         left: 50%;
+//         transform: translate(-50%,-100%);
+//     }
+//     &-bottom {
+//         position: absolute;
+//         top: v.$step-three;
+//         left: 50%;
+//         transform: translate(-50%);
+//     }
+// }
+
+// %stepVerticalFour {
+//     &-top {
+//         position: absolute;
+//         top: v.$step-four;
+//         left: 50%;
+//         transform: translate(-50%,-100%);
+//     }
+//     &-bottom {
+//         position: absolute;
+//         top: v.$step-four;
+//         left: 50%;
+//         transform: translate(-50%);
+//     }
+// }
+// %stepVerticalFive {
+//     &-top {
+//         position: absolute;
+//         top: v.$step-five;
+//         left: 50%;
+//         transform: translate(-50%,-100%);
+//     }
+//     &-bottom {
+//         position: absolute;
+//         top: v.$step-five;
+//         left: 50%;
+//         transform: translate(-50%);
+//     }
+// }
+// %stepVerticalBtn {
+//     position: absolute;
+//     bottom: 4.5rem;
+//     left: 50%;
+//     transform: translate(-50%);
+
+// }
+
+// // steps horizontal
+// %stepHorizontal {
+//     position: absolute;
+//     left: v.$step-one;
+//     // transform: translateX(-50%);
+// }
+// %stepHorizontalOne {
+//     &-left {
+//         position: absolute;
+//         left: v.$step-one;
+//         transform: translateX(-100%);
+//     }
+//     &-right {
+//         position: absolute;
+//         top: 50%;
+//         left: v.$step-one;
+//     }
+//     &-center {
+//         position: absolute;
+//         left: v.$step-one;
+//         transform: translateX(-50%);
+//     }
+// }
