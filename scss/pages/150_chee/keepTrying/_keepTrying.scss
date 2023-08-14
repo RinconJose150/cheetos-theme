@@ -32,10 +32,10 @@
             .containerTitle {
                 width: 100%;
                 max-width: 47rem;
-                @include m.set-position(v.$step-two, auto, 50%);
+                @include m.position(v.$step-two, auto, 50%);
                 transform: translate(-50%,-100%);
                 @include m.mq(tab,min) {
-                    @include m.set-position(v.$step-one, auto, v.$step-four);
+                    @include m.position(v.$step-one, auto, v.$step-four);
                     transform: translateX(-50%);
                 }
             }
@@ -63,14 +63,14 @@
                 height: 100%;
                 max-height: f.toRem(200);
 
-                @include m.set-position(v.$step-two, auto, 50%);
+                @include m.position(v.$step-two, auto, 50%);
                 transform: translateX(-50%);
 
                 @include m.mq(mobS3,min) {
                     max-height: f.toRem(230);
                 }
                 @include m.mq(tab,min) {
-                    @include m.set-position(50%, auto, v.$step-two);
+                    @include m.position(50%, auto, v.$step-two);
                     transform: translate(-50%,-50%);
                     // grid-column: 1 / 2;
                     // grid-row: 1 / 3;
@@ -140,7 +140,7 @@
                 }
             }
             .textWithBtn {
-                @include m.set-position(auto, 4.5rem, 50%);
+                @include m.position(auto, 4.5rem, 50%);
                 transform: translateX(-50%);
                 width: 100%;
                 display: flex;
@@ -150,7 +150,7 @@
                 @include m.mq(tab,min) {
                     margin-top: -1rem;
                     justify-content: space-between;
-                    @include m.set-position(v.$step-four, auto, v.$step-four);
+                    @include m.position(v.$step-four, auto, v.$step-four);
                     transform: translate(-50%);
                 }
                 .containerBtns {

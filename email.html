@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Email</title>
+    <link rel="stylesheet" href="./lib/normalize/normalize.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <header class="chess_header">
+        <div class="chess_header__body">
+            <div class="imgLogo">
+                <picture>
+                    <source srcset="./img/icons/icon-logo.webp" type="image/webp">
+                    <source srcset="./img/icons/icon-logo.png" type="image/png">
+                    <img src="./img/icons/icon-logo.png" alt="logo" title="logo" loading="lazy">
+                </picture>
+            </div>
+        </div>
+    </header>
+    <main class="chess-email-view">
+        <figure class="bgImage">
+            <picture>
+                <source media="(min-width: 991px)" srcset="./img/upload/bg_orange.webp" type="image/webp">
+                <source media="(min-width: 991px)" srcset="./img/upload/bg_orange.jpg" type="image/jpeg">
+                <source srcset="./img/upload/bg_orange_mobile.webp" type="image/webp">
+                <img src="./img/upload/bg_orange_mobile.jpg" alt="bg banner" title="bg banner" loading="lazy">
+            </picture>
+        </figure>
+
+        <!-- EMAIL -->
+        <!-- <section class="chess-form">
+            <article class="chess-form__body chess-container-x">
+                <header class="chess-form__header">
+                    <h1 class="chess-form__title">Ingresa</h1>
+                    <p class="chess-form__desc">tu correo electrónico</p>
+                </header>
+                <form class="chess-form__wrapper">
+                    <div class="form-fields">
+                        <input type="email" name="user-email" id="user-email" placeholder="Correo electrónico">
+                    </div>
+                    <div class="form-actions">
+                        <input class="chess-form__button" type="submit" value="Continuar">
+                    </div>
+                </form>
+            </article>
+        </section> -->
+
+        <!-- LOGIN -->
+        <!-- <section class="chess-form">
+            <article class="chess-form__body chess-container-x">
+                <header class="chess-form__header">
+                    <h1 class="chess-form__title">Hola felipe,</h1>
+                    <p class="chess-form__desc">ingresa tu contraseña</p>
+                </header>
+                <form class="chess-form__wrapper">
+                    <div class="form-fields">
+                        <input type="email" name="user-email" id="user-email" placeholder="Correo electrónico" required>
+                        <input type="password" name="user-password" id="user-password" placeholder="Contraseña" required>
+                        <p class="chess-form__forgot-pass">¿Olvidaste tu contraseña?</p>
+                    </div>
+                    <div class="form-actions">
+                        <input class="chess-form__button" type="submit" value="Ingresar">
+                    </div>
+                </form>
+            </article>
+        </section> -->
+
+        <!-- CODE -->
+        <!-- <section class="chess-form chess-form--code">
+            <article class="chess-form__body chess-container-x">
+                <header class="chess-form__header">
+                    <h1 class="chess-form__title">Felipe,</h1>
+                    <p class="chess-form__desc">ingresa el código que te enviamos al correo inscrito</p>
+                </header>
+                <form class="chess-form__wrapper">
+                    <div class="form-fields">
+                        <p class="chess-form-text">adsdsaasdsadsddasd@fdsffsd.com</p>
+                        <input type="text" name="user-code" id="user-code" placeholder="Código" required>
+                    </div>
+                    <div class="form-actions">
+                        <button class="chess-form__button">Volver</button>
+                        <button class="chess-form__button chess-form__button--black">Continuar</button>
+                    </div>
+                </form>
+            </article>
+        </section> -->
+
+        <!-- PASSWORD RESET -->
+        <section class="chess-form">
+            <article class="chess-form__body chess-container-x">
+                <header class="chess-form__header">
+                    <h1 class="chess-form__title">Hola felipe,</h1>
+                    <p class="chess-form__desc">ingresa tu nueva contraseña</p>
+                </header>
+                <form class="chess-form__wrapper">
+                    <div class="form-fields">
+                        <input type="password" name="user-password" id="user-password" placeholder="Nueva contraseña" required>
+                        <input type="password" name="user-password-confirm" id="user-password-confirm" placeholder="Confirma contraseña" required>
+                    </div>
+                    <div class="form-actions">
+                        <input class="chess-form__button" type="submit" value="Ingresar">
+                    </div>
+                </form>
+            </article>
+        </section>
+    </main>
+</body>
+<script defer src="./js/components/password-eye.js"></script>
+<script defer src="js/150_chee/form.js"></script>
+</html>

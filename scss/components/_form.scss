@@ -1,0 +1,231 @@
+@use "../abstracts" as *;
+
+%input {
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: #fff;
+  font-family: $var-lexend;
+  padding: 10px 30px;
+
+  height: 40px;
+  width: 100%;
+
+  // TEMPORAL
+  margin-bottom: 15px;
+
+  &::placeholder {
+    color: #ffffffa9;
+  }
+
+  &:required:valid {
+    color: #5a5a5a;
+  }
+
+  @include mix-mq(tab, min) {
+    font-size: fun-sizeFonts(commonFonts, big);
+    padding: 10px 30px;
+
+    height: 45px;
+  }
+}
+
+
+.#{$var-prefix}-email-view {
+  @extend %fill-in;
+  @include mix-position($top: 0, $left: 0);
+  
+  .bgImage {
+    height: 100%;
+  }
+}
+
+.#{$var-prefix}-form {
+  height: 100%;
+
+  &__body {
+    color: #fff;
+    height: 100%;
+    min-width: 280px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    width: 90%;
+
+    display: grid;
+    align-items: center;
+    grid-template-rows: repeat(2, 1fr);
+
+    @include mix-mq(mob, min) {
+      max-width: 440px;
+    }
+
+    @include mix-mq(tab, min) {
+      max-width: 600px;
+    }
+
+    @include mix-mq(lap, min) {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__header {
+    margin: auto;
+    max-width: 300px;
+
+    @include mix-mq(mob, min) {
+      max-width: 490px;
+
+      &--min {
+        max-width: 450px;
+      }
+    }
+  }
+
+  &__title {
+    font-size: fun-toRem(48);
+    line-height: 1;
+    text-shadow: 0px 2.5px 5px rgba(135, 50, 2, 0.6);
+
+    @include mix-mq(tab, min) {
+      font-size: fun-toRem(72);
+    }
+  }
+
+  &__desc {
+    font-family: $var-lexend;
+    font-size: fun-sizeFonts(commonFonts, huge);
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 0px 3.75px 7.5px rgba(135, 50, 2, 0.6);
+
+    @include mix-mq(tab, min) {
+      font-size: fun-sizeFonts(commonFonts, ultra_large);
+    }
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: 450px;
+
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    align-content: space-between;
+
+    @include mix-mq(mob, min) {
+      align-items: flex-end;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    input {
+      display: block;
+      text-align: center;
+
+      &[type="text"],
+      &[type="email"] {
+        @extend %input;
+        background-image: url(#{$var-imagePath}/background/bg_input.png);
+
+        &:required:valid {
+          background-image: url(#{$var-imagePath}/background/bg_input_fill.png);
+        }
+      }
+
+      &[type="password"] {
+        @extend %input;
+        background-image: url(#{$var-imagePath}/background/bg_input.png);
+
+        &:required:valid {
+          background-image: url(#{$var-imagePath}/background/bg_input_fill.png);
+        }
+      }
+    }
+
+    .form-fields {
+      margin: 0 auto;
+      max-width: 340px;
+      width: 100%;
+    }
+
+    .form-actions {
+      @include mix-flex($fw: nowrap);
+    }
+  }
+
+  &__forgot-pass {
+    font-family: $var-lexend;
+  }
+
+  &__button {
+    cursor: pointer;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.4));
+
+    background: url(#{$var-imagePath}/icons/icon_btn_orange.png) center
+      center/100% 100% no-repeat;
+    color: #fff;
+    font-family: $var-monstro;
+    font-size: fun-sizeFonts(commonFonts, large);
+    margin: 0 auto;
+    min-width: 200px;
+    padding: 8px 30px;
+
+    height: 45px;
+
+    &--black {
+      background: url(#{$var-imagePath}/icons/icon_btn_black.png);
+    }
+  }
+
+  &--code &__header {
+    max-width: 450px;
+  }
+
+  &--code {
+    .form-fields {
+      align-self: flex-start;
+    }
+
+    .#{$var-prefix}-form-text {
+      margin-bottom: 45px;
+    }
+  }
+}
+
+.#{$var-prefix}-form-text {
+  color: #000;
+  font-family: $var-lexend;
+  font-size: fun-sizeFonts(commonFonts, medium);
+}
+
+.password-eye-wrapper {
+  position: relative;
+
+  .password-eye {
+    cursor: pointer;
+
+    background: url(#{$var-imagePath}/icons/icon-eye.svg) center
+      center/contain no-repeat;
+    display: block;
+    height: 45px;
+    width: 23px;
+    @include mix-position($top: 1px, $right: 20px);
+
+    &--hide {
+      &::after {
+        content: "";
+        background-color: #fff;
+        border-radius: 10px;
+        height: 2px;
+        width: 24px;
+        margin: auto;
+        transform: rotate(45deg);
+        @include mix-position($top: 0, $right: 0, $bottom: 0, $left: 0);
+      }
+    }
+  }
+}
