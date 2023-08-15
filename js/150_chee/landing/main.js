@@ -1,3 +1,16 @@
+// (function (Drupal, once) {
+//     'use strict';
+
+//     Drupal.behaviors.homeFunctionality = {
+//         attach: function (context, settings) {
+//             once('instructions', '.chess_carousel').forEach(elm => {
+
+//             })
+//         }
+//     };
+
+// }(Drupal, once));
+
 document.addEventListener('DOMContentLoaded', function() {
     listenerEvents()
 })
@@ -5,9 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function listenerEvents() {
     // Function Menu
     functionMenu()
-
-    // Swiper
-    runSwiper()
 
     // Change URL
     changeURL()
@@ -34,20 +44,6 @@ function btnCloseMenu(btn) {
         document.querySelector('.chess_header #menuFixed').classList.remove('active')
         btnClose.previousElementSibling.classList.remove('hide')
     })
-}
-
-function runSwiper(params) {
-    const chessSwiper = new Swiper(".chessSwiper", {
-        direction: "vertical",
-        pagination: {
-          el: ".swiper-pagination",
-          type: "fraction",
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
 }
 
 function changeURL() {
