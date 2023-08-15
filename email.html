@@ -21,7 +21,7 @@
             </div>
         </div>
     </header>
-    <main class="chess-email-view">
+    <main class="chess-form-view">
         <figure class="bgImage">
             <picture>
                 <source media="(min-width: 991px)" srcset="./img/upload/bg_orange.webp" type="image/webp">
@@ -32,7 +32,7 @@
         </figure>
 
         <!-- EMAIL -->
-        <!-- <section class="chess-form">
+        <section class="chess-form chess-form--email">
             <article class="chess-form__body chess-container-x">
                 <header class="chess-form__header">
                     <h1 class="chess-form__title">Ingresa</h1>
@@ -47,10 +47,10 @@
                     </div>
                 </form>
             </article>
-        </section> -->
+        </section>
 
         <!-- LOGIN -->
-        <!-- <section class="chess-form">
+        <!-- <section class="chess-form chess-form--login">
             <article class="chess-form__body chess-container-x">
                 <header class="chess-form__header">
                     <h1 class="chess-form__title">Hola felipe,</h1>
@@ -59,7 +59,7 @@
                 <form class="chess-form__wrapper">
                     <div class="form-fields">
                         <input type="email" name="user-email" id="user-email" placeholder="Correo electrónico" required>
-                        <input type="password" name="user-password" id="user-password" placeholder="Contraseña" required>
+                        <input type="password" name="user-password" id="user-password" placeholder="Contraseña" required autocomplete="off">
                         <p class="chess-form__forgot-pass">¿Olvidaste tu contraseña?</p>
                     </div>
                     <div class="form-actions">
@@ -74,12 +74,13 @@
             <article class="chess-form__body chess-container-x">
                 <header class="chess-form__header">
                     <h1 class="chess-form__title">Felipe,</h1>
-                    <p class="chess-form__desc">ingresa el código que te enviamos al correo inscrito</p>
+                    <p class="chess-form__desc">ingresa el código que te enviamos a</p>
+                    <input class="chess-form__email" type="text" value="felipe@correo.com" required>
                 </header>
                 <form class="chess-form__wrapper">
                     <div class="form-fields">
-                        <p class="chess-form-text">adsdsaasdsadsddasd@fdsffsd.com</p>
                         <input type="text" name="user-code" id="user-code" placeholder="Código" required>
+                        <p class="chess-resend-code">00:25 <br><span class="chess-resend-code__button">¿No recibiste el código? Reenviar código.</span></p>
                     </div>
                     <div class="form-actions">
                         <button class="chess-form__button">Volver</button>
@@ -90,7 +91,7 @@
         </section> -->
 
         <!-- PASSWORD RESET -->
-        <section class="chess-form">
+        <!-- <section class="chess-form chess-form--password-reset">
             <article class="chess-form__body chess-container-x">
                 <header class="chess-form__header">
                     <h1 class="chess-form__title">Hola felipe,</h1>
@@ -98,15 +99,15 @@
                 </header>
                 <form class="chess-form__wrapper">
                     <div class="form-fields">
-                        <input type="password" name="user-password" id="user-password" placeholder="Nueva contraseña" required>
-                        <input type="password" name="user-password-confirm" id="user-password-confirm" placeholder="Confirma contraseña" required>
+                        <input type="password" name="user-password" id="user-password" placeholder="Nueva contraseña" required autocomplete="off">
+                        <input type="password" name="user-password-confirm" id="user-password-confirm" placeholder="Confirma contraseña" required autocomplete="off">
                     </div>
                     <div class="form-actions">
                         <input class="chess-form__button" type="submit" value="Ingresar">
                     </div>
                 </form>
             </article>
-        </section>
+        </section> -->
     </main>
 </body>
 <script defer src="./js/components/password-eye.js"></script>

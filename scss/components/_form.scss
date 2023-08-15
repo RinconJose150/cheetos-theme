@@ -31,11 +31,10 @@
   }
 }
 
-
-.#{$var-prefix}-email-view {
+.#{$var-prefix}-form-view {
   @extend %fill-in;
   @include mix-position($top: 0, $left: 0);
-  
+
   .bgImage {
     height: 100%;
   }
@@ -51,12 +50,9 @@
     margin: 0 auto;
     padding-top: 40px;
     padding-bottom: 40px;
+    position: relative;
     text-align: center;
     width: 90%;
-
-    display: grid;
-    align-items: center;
-    grid-template-rows: repeat(2, 1fr);
 
     @include mix-mq(mob, min) {
       max-width: 440px;
@@ -76,12 +72,20 @@
     margin: auto;
     max-width: 300px;
 
+    transform: translateY(-100%);
+    @include mix-position($top: $var-step-two, $left: 0, $right: 0);
+
     @include mix-mq(mob, min) {
       max-width: 490px;
 
       &--min {
         max-width: 450px;
       }
+    }
+
+    @include mix-mq(tab, min) {
+      transform: none;
+      top: $var-step-one;
     }
   }
 
@@ -107,44 +111,30 @@
     }
   }
 
+  &__email {
+    margin: 10px auto 0;
+    margin-bottom: 0 !important;
+    max-width: 340px;
+
+    @include mix-mq(990) {
+      width: auto !important;
+      @include mix-position($top: 100%, $left: 25px, $right: 25px);
+    }
+  }
+
   &__wrapper {
     margin: 0 auto;
     max-width: 450px;
 
-    width: 100%;
-    height: 100%;
-
     display: grid;
     align-content: space-between;
 
-    @include mix-mq(mob, min) {
-      align-items: flex-end;
-      grid-template-rows: 1fr 1fr;
-    }
-
-    input {
-      display: block;
-      text-align: center;
-
-      &[type="text"],
-      &[type="email"] {
-        @extend %input;
-        background-image: url(#{$var-imagePath}/background/bg_input.png);
-
-        &:required:valid {
-          background-image: url(#{$var-imagePath}/background/bg_input_fill.png);
-        }
-      }
-
-      &[type="password"] {
-        @extend %input;
-        background-image: url(#{$var-imagePath}/background/bg_input.png);
-
-        &:required:valid {
-          background-image: url(#{$var-imagePath}/background/bg_input_fill.png);
-        }
-      }
-    }
+    @include mix-position(
+      $top: $var-step-three,
+      $left: 25px,
+      $right: 25px,
+      $bottom: 4.5rem
+    );
 
     .form-fields {
       margin: 0 auto;
@@ -153,12 +143,42 @@
     }
 
     .form-actions {
-      @include mix-flex($fw: nowrap);
+      gap: 10px;
+      @include mix-flex($fd: column-reverse);
+
+      @include mix-mq(tab, min) {
+        flex-direction: row;
+      }
+    }
+  }
+
+  input {
+    display: block;
+    text-align: center;
+
+    &[type="text"],
+    &[type="email"] {
+      @extend %input;
+      background-image: url(#{$var-imagePath}/background/bg_input.png);
+
+      &:required:valid {
+        background-image: url(#{$var-imagePath}/background/bg_input_fill.png);
+      }
+    }
+
+    &[type="password"] {
+      @extend %input;
+      background-image: url(#{$var-imagePath}/background/bg_input.png);
+
+      &:required:valid {
+        background-image: url(#{$var-imagePath}/background/bg_input_fill.png);
+      }
     }
   }
 
   &__forgot-pass {
     font-family: $var-lexend;
+    margin-bottom: 20px;
   }
 
   &__button {
@@ -190,16 +210,16 @@
       align-self: flex-start;
     }
 
-    .#{$var-prefix}-form-text {
-      margin-bottom: 45px;
+    input {
+      margin-bottom: 8px !important;
     }
   }
-}
 
-.#{$var-prefix}-form-text {
-  color: #000;
-  font-family: $var-lexend;
-  font-size: fun-sizeFonts(commonFonts, medium);
+  &--login {
+    .form-fields {
+      transform: translateY(-20px);
+    }
+  }
 }
 
 .password-eye-wrapper {
@@ -208,8 +228,8 @@
   .password-eye {
     cursor: pointer;
 
-    background: url(#{$var-imagePath}/icons/icon-eye.svg) center
-      center/contain no-repeat;
+    background: url(#{$var-imagePath}/icons/icon-eye.svg) center center/contain
+      no-repeat;
     display: block;
     height: 45px;
     width: 23px;
@@ -226,6 +246,26 @@
         transform: rotate(45deg);
         @include mix-position($top: 0, $right: 0, $bottom: 0, $left: 0);
       }
+    }
+  }
+}
+
+.#{$var-prefix}-resend-code {
+  font-family: $var-lexend;
+
+  @include mix-mq(990) {
+    font-size: 14px;
+  }
+
+  &__button {
+    cursor: pointer;
+
+    opacity: 0.65;
+
+    @include mix-mq(990) {
+      display: block;
+      margin: 0 auto;
+      max-width: 200px;
     }
   }
 }
